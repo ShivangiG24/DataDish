@@ -77,13 +77,20 @@ For our univariate analysis, we thought that it'd be interesting to look at aver
 
 <iframe src="assets/first_univariate.html" width=800 height=600 frameBorder=0></iframe>
 
-3. Counts of Cooking Times as Categorical Data: To extract cooking times, as categorical data, we observed that the 'tags' column in the DataFrame recipes had a string value in the format 'xx-minutes-or-less' or 'xx-hours-or-less'. The defined function extract_time(lst) takes in a list of strings and extracts the minutes. Note that this isn't the actual cooking time in minutes, but rather 4 different categories which entail the upper bound of cooking times for that recipe. For example, the "60-minutes-or-less" category is specifically for recipes that are between 30 and 60 minutes. After assigning a new column 'cooking time (minutes)' with these extracted values, we created our second plot-bar graph of cooking times as categorical data. With the bar chart, we were able to discern that the most recipes, specifically 25406 recipes which is equivalent to 32.0504% of the entire dataset, fell under the "60-minutes-or-less" column.
+2. Counts of Cooking Times as Categorical Data: To extract cooking times, as categorical data, we observed that the 'tags' column in the DataFrame recipes had a string value in the format 'xx-minutes-or-less' or 'xx-hours-or-less'. The defined function extract_time(lst) takes in a list of strings and extracts the minutes. Note that this isn't the actual cooking time in minutes, but rather 4 different categories which entail the upper bound of cooking times for that recipe. For example, the "60-minutes-or-less" category is specifically for recipes that are between 30 and 60 minutes. After assigning a new column 'cooking time (minutes)' with these extracted values, we created our second plot-bar graph of cooking times as categorical data. With the bar chart, we were able to discern that the most recipes, specifically 25406 recipes which is equivalent to 32.0504% of the entire dataset, fell under the "60-minutes-or-less" column.
+
+<iframe src="assets/second_univariate.html" width=800 height=600 frameBorder=0></iframe>
 
 
 ## Bivariate Analysis
 
 1. Average Rating vs. Minutes of Recipes: We examined the relationship between the 'minutes' column of recipes, which represents how many minutes a recipe takes to make, and their 'average_rating'. We noticed that there was one far-right outlier in the data which was a recipe that recieved a rating of 5 and somehow takes over a million minutes to make. Because of this outlier, our x-axis units was in the millions although most of the data was under 100,000 minutes (and perhaps even much, much lower in the thousands or tens of thousands). We recognize that if we were analyzing the correlation between these two variables more closely, it might be beneficial to drop the extremely large outlier to produce more meaningful plots and insights but since we aren't doing so, we thought it was best to keep the original data intact.
+
+<iframe src="assets/first_bivariate.html" width=800 height=600 frameBorder=0></iframe>
+
 2. Average Rating by Cooking Time: We decided to make an overlaid box plot and histogram that examined the relationship between cooking time, 60-minutes-or-less, and the average rating of these recipes. Note that this cooking time is not categorical as we filtered out recipes based on the "minutes" column which has the specific cooking times of each recipe. The box plots here look eerily similar, suggesting that regardless of whether or not the recipe took under or above 60 minutes, the recipes shared similar distributions of average ratings. If you look closely at the histogram, you'll notice that the blue distribution (recipes that fit the 60-minutes-or-less criteria) closely follows the red distribution (recipes that are above 60-minutes). 
+
+<iframe src="assets/second_bivariate.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Interesting Aggregate
 
