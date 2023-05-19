@@ -119,12 +119,15 @@ We decided to analyze the missingness dependency of the average_rating column at
     - **Null Hypothesis**: The missing values in average_rating column are not missing at random (NMAR) and do not depend on cooking times
     - **Alternative Hypothesis**: The missing values in average_rating column are missing at random and depend on cooking times.
     When conducting our permutation test for missingness, we chose the **total variation distance (tvd)** as the test statistic because we were working with categorical data i.e., 'is 60-minutes-or-less' column. The observed tvd is approximately 0.018 and is shown on the histogram below. With a p-value of 0.2, we **fail to reject the null** hypothesis because we can see that our observed_tvd lies almost in the center of the randomized permutative distribution, meaning that it is possible for us to see a result such as the one we got in the data.
-    
+
+<iframe src="assets/missing_ct.html" width=800 height=600 frameBorder=0></iframe>
     
 2. 'contributor ID':
     - **Null Hypothesis**: The missing values in average_rating column are not missing at random (NMAR) and do not depend on contributor ID
     - **Alternative Hypothesis**: The missing values in average_rating column are missing at random and depend on contributor ID.
     When conducting our permutation test for missingness, we chose the **total variation distance (tvd)** as the test statistic because we were working with categorical data i.e., 'contributor ID' column. The observed tvd is approximately 0.289 and is shown on the histogram below. With a p-value of 0.034, we **reject the null** hypothesis  because we can see that our observed_tvd lies at the far right of the randomized permutative distribution, meaning that it is not likely for us to see a result such as the one we got in the data.
+    
+<iframe src="assets/missing_id.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 # Hypothesis Testing 🥘🤤
@@ -134,5 +137,7 @@ We decided to analyze the missingness dependency of the average_rating column at
 **Alternative Hypothesis**: Recipes with a cooking time of 60 minutes and under do not have the same average rating of recipes with a cooking time of greater than 60 minutes, implying that these two groups of recipes (differentiated by cooking times) do not come from the same distribution.
 
 **Test Statistic & Significance Level**: Our test statistic is the k-s statistic. We chose this because we noticed that the measure of central spread i.e., medians and means of the two distributions were highly similar (observable in our overlaid box plot and pivot table above) which implied that we couldn't use a statistic such as the difference in means nor tvd as we weren't dealing with categorical data. For the significance level, we chose to do 5% as it's very standard in conducting scientific research experiments.
+
+<iframe src="assets/hypothesis.html" width=800 height=600 frameBorder=0></iframe>
 
 **P-value and Conclusion**: Our p-value from both the shorter ks_2samp method (which uses the built-in function) was 0.767 and our p-value after performing the permutation test was 0.572. While these may seem different, they both lead to us failing to reject our null hypothesis as they are above the significance level of 0.05. This means that we cannot conclude that the average rating of recipes with a cooking time of 60 minutes and under are drawn from the same, continuous distribution as the average rating of recipes with a cooking time of greater than 60 minutes.
