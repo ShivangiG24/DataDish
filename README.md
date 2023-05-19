@@ -1,4 +1,6 @@
 # DataDish 👩🏽‍🍳
+
+# Abstract ✍️
 This is an in-depth analysis of publicly-available data sourced from food.com, conducted by Shivangi Gupta and Shreya Sudan for DSC 80 (The Practice and Application of Data Science) at UC San Diego. It encompasses a series of rigorous analytical procedures, including data cleansing, exploratory data analysis, data visualization, and hypothesis testing.
 
 # Introduction 😇
@@ -39,7 +41,7 @@ A glimpse at the original dataframes:
 
 `print(recipes.head().to_markdown(index=False))`
 
-# Cleaning and EDA 🕵️
+# Cleaning and EDA 📊
 
 1. Checked the datatypes of columns within the Recipes dataframe to make sure they matched what they should be logically (ie 'minutes' should be an int). 
 2. When we were examining the datatypes closely, we noticed that some columns appeared to look like lists but were actually strings. For these such columns ('ingredients', 'tags', 'nutrition'), we removed the opening and closing parenthesis as well as split by string to ensure the inherent data remained the same and now fit the proper format. Note that for the nutrition column specifically, we separated each index within a singular list and created new columns in the dataframe to match each index with the value it represented. For example, calories was the first element, total fat was the second, and so on.
@@ -60,7 +62,7 @@ For our univariate analysis, we thought that it'd be interesting to look at aver
 
 We chose to make a pivot table that showed the distribution of recipes under the 60-minutes-or-less category and everything above 60 minutes. We were able to support our previous bivariate analysis which showed that the distributions of these two groups is highly similar, seen by the similarity of the central measures of tendency. This interesting finding led to us wanting to explore the relationship between cooking times and average rating further, which gave way to our hypothesis testing later on!
 
-# Assessment of Missingness
+# Assessment of Missingness 🕵️
 
 ## NMAR Analysis
 
@@ -84,7 +86,7 @@ We decided to analyze the missingness dependency of the average_rating column at
     - **Alternative Hypothesis**: The missing values in average_rating column are missing at random and depend on contributor ID.
     When conducting our permutation test for missingness, we chose the **total variation distance (tvd)** as the test statistic because we were working with categorical data i.e., 'contributor ID' column. The observed tvd is approximately 0.289 and is shown on the histogram below. With a p-value of 0.034, we **reject the null** hypothesis  because we can see that our observed_tvd lies at the far right of the randomized permutative distribution, meaning that it is not likely for us to see a result such as the one we got in the data.
 
-# Hypothesis Testing
+# Hypothesis Testing 🥘🤤
 
 **Null Hypothesis**: Average rating of recipes with a cooking time of 60 minutes and under are drawn from the same, continuous distribution as the average rating of recipes with a cooking time of greater than 60 minutes.
 
