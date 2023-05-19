@@ -4,7 +4,7 @@ This is an in-depth analysis of publicly-available data sourced from food.com, c
 
 # Introduction 😇
 
-Hey! We chose the Recipes dataset because we are both passionate about cooking and felt slightly nostalgiac about working with the Great British Bake Off in DSC 10 last spring. It was a wonderful choice, to be honest, since we had a fun time reading through very creative recipe names, instructions, and reviews.
+We chose the Recipes dataset because we are both passionate about cooking and felt slightly nostalgiac about working with the Great British Bake Off in DSC 10 last spring. It was a wonderful choice, to be honest, since we had a fun time reading through very creative recipe names, instructions, and reviews.
 
 The Recipes dataframe has 83782 rows × 12 columns and the Interactions dataframe has 731927 rows × 5 columns. Note that the bulk of the project utilizes a merged version of both of these dataframes, resulting in a dataframe that has 83782 rows × 13 columns.
 
