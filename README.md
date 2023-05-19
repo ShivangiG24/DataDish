@@ -1,4 +1,5 @@
 # DataDish 👩🏽‍🍳
+![Food.com logo](food.jpg)
 
 # Abstract ✍️
 This is an in-depth analysis of publicly-available data sourced from food.com, conducted by Shivangi Gupta and Shreya Sudan for DSC 80 (The Practice and Application of Data Science) at UC San Diego. It encompasses a series of rigorous analytical procedures, including data cleansing, exploratory data analysis, data visualization, and hypothesis testing.
@@ -73,6 +74,7 @@ Here are the first few rows of `recipes`:
 
 ## Univariate Analysis
 For our univariate analysis, we thought that it'd be interesting to look at average rating of recipes and the cooking times as categorical data. 
+
 **Empirical Distribution of the Average Ratings**: For our first plot, we created a histogram to observe the empirical distribution of average ratings. Most of our datapoints (about 97%) received an average rating ranging between 4 and 5 resulting in a histogram that is left-skewed. This was expected because we noticed during our EDA that the mean of the 'average_rating' column was approximately 4.669 and the median was 4.857.
 
 <iframe src="assets/first_univariate.html" width=800 height=600 frameBorder=0></iframe>
